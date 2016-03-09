@@ -1,6 +1,5 @@
 package sanguchi;
 
-import infinity.Infinity;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -34,11 +33,9 @@ public class SanguchiBot
 	private String token;
 	public boolean debug, save_log;
 	Config config;
-	public Infinity infinity;
 	public long owner;
 	public String username;
 	public List<Long> blocked_users = new ArrayList<Long>();
-	public List<Long> sudo_users = new ArrayList<Long>();
 	public List<Message> mensajes = new ArrayList<Message>();
 	public List<Plugin> plugins = new ArrayList<Plugin>();
 	boolean lock = true;
@@ -85,8 +82,6 @@ public class SanguchiBot
 		owner = config.owner;
 		blocked_users = config.blocked_users;
 		sudo_users = config.sudo_users;
-		infinity = new Infinity();
-		infinity.debug = debug;
 		bot = TelegramBotAdapter.build(token);
 		loadPlugins();
 		for (Plugin p : plugins)
@@ -297,9 +292,9 @@ public class SanguchiBot
 			}
 
 		}
-
+		//raw plugin example.
 		/*
-		 * if(m.startsWith("/echo")){ String result = m.text().substring(5);
+		 * if(m.startsWith("/echo ")){ String result = m.text().substring(6);
 		 * bot.sendMessage(m.chat().id(), result); }
 		 */
 	}
