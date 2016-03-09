@@ -1,6 +1,5 @@
 package sanguchi;
 
-import infinity.Infinity;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -71,8 +70,7 @@ public class Plugin
 	 * Instancia de SanguchiBot del plugin.
 	 */
 	public SanguchiBot sanguchi;
-	public Infinity infinity;
-	
+
 	public Plugin()
 	{
 	}
@@ -124,10 +122,7 @@ public class Plugin
 	{
 		bot = b;
 	}
-	public void onStart()
-	{
-		
-	}
+
 	public boolean onLeave(Message me)
 	{
 		print("onLeave Event for Plugin " + getName());
@@ -146,10 +141,7 @@ public class Plugin
 	{
 		return "/" + getName() + "\nPlugin sin descripcion.";
 	}
-	public void setInfinity(Infinity i)
-	{
-		infinity = i;
-	}
+
 	/**
 	 * Funcion llamada en caso de que un plugin genere una excepcion, esto evita que cualquier
 	 * plugin que tenga un error no provoque que el bot se crashee.
